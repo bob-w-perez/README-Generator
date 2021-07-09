@@ -1,8 +1,7 @@
 
-// $$$ gitignore and package-lock.json $$$ //
-
 const inquirer = require('inquirer');
 const fs = require('fs');
+// imports functions for rendering the README components
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
 const questions = [
@@ -11,6 +10,7 @@ const questions = [
         message: 'What is your GitHub username?',
         name: 'userName'
     },
+    // simple validation algorithm requires "@" in the email input
     {
         type: 'input',
         message: 'What is your email address?',
@@ -44,6 +44,7 @@ const questions = [
         message: "Would you like to add a 'Features' section to your README?",
         name: 'featureConfirm'
     },
+    // only prompts user if they said 'y' (true) to the last question, uses editor so user can format section how they want given they may have multiple features
     {
         type: 'editor',
         message: "Use the editor to describe your project\'s features (close the editor when finished and click 'Save'):",
@@ -57,6 +58,7 @@ const questions = [
         message: "What does the user need to know about using the repo?",
         name: 'usage'
     },
+    // added credits section since it was listed as a required section in the 'Professional README Guide' attached to the project instructions
     {
         type: 'input',
         message: "Who deserves to be credited for this project's development?",
@@ -93,6 +95,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
+            // writes generated README to a subdirectory to avoid confusion with the project's README
             writeToFile('./new-README/README.md', generateMarkdown(answers));
         });
 }

@@ -51,6 +51,7 @@ This project is licensed under the ${renderLicenseLink(license)}.`
   }
 }
 
+// called in Table of Contents section and only renders if user responded 'yes' to the featureConfirm prompt
 function renderFeatureLink(featureConfirm) {
   if (!featureConfirm) {
     return '';
@@ -59,6 +60,7 @@ function renderFeatureLink(featureConfirm) {
   }
 }
 
+// called in main README section and only renders if user responded 'yes' to the featureConfirm prompt
 function renderFeatures(featureConfirm, features) {
   if (!featureConfirm) {
     return '';
