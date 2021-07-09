@@ -11,7 +11,6 @@ const questions = [
         message: 'What is your GitHub username?',
         name: 'userName'
     },
-    // add validations here
     {
         type: 'input',
         message: 'What is your email address?',
@@ -30,15 +29,33 @@ const questions = [
         name: 'projectName'
     },
     {
+        type: 'list',
+        message: "What kind of license should you project have?",
+        name: 'license',
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'none']
+    },
+    {
         type: 'input',
         message: 'Please write a short description of your project:',
         name: 'description'
     },
     {
-        type: 'list',
-        message: "What kind of license should you project have?",
-        name: 'license',
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'none']
+        type: 'confirm',
+        message: "Would you like to add a 'Features' section to your README?",
+        name: 'featureConfirm'
+    },
+    {
+        type: 'editor',
+        message: "Use the editor to describe your project\'s features (close the editor when finished and click 'Save'):",
+        name: 'features',
+        when(answers) {
+            return answers.featureConfirm;
+        }
+    },
+    {
+        type: 'input',
+        message: "What does the user need to know about using the repo?",
+        name: 'usage'
     },
     {
         type: 'input',
@@ -59,11 +76,6 @@ const questions = [
     },
     {
         type: 'input',
-        message: "What does the user need to know about using the repo?",
-        name: 'usage'
-    },
-    {
-        type: 'input',
         message: "What does the user need to know about contributing to the repo?",
         name: 'contributing'
     }
@@ -81,8 +93,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            // %%%%  CHANGE FILE NAME
-            writeToFile('test.md', generateMarkdown(answers));
+            writeToFile('./new-README/README.md', generateMarkdown(answers));
         });
 }
 

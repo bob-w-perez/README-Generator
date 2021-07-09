@@ -51,9 +51,26 @@ This project is licensed under the ${renderLicenseLink(license)}.`
   }
 }
 
+function renderFeatureLink(featureConfirm) {
+  if (!featureConfirm) {
+    return '';
+  } else {
+    return '- [Features](#features)'
+  }
+}
+
+function renderFeatures(featureConfirm, features) {
+  if (!featureConfirm) {
+    return '';
+  } else {
+    return `## Features  
+${features}`;
+  }
+}
 
 function generateMarkdown(data) {
   return `# ${data.projectName}
+
 ${renderLicenseBadge(data.license)}  
 
 
@@ -67,6 +84,8 @@ ${data.description}
 ## Table of Contents
 
 - [Installation](#installation)
+
+${renderFeatureLink(data.featureConfirm)}
 
 - [Usage](#usage)
 
@@ -90,7 +109,7 @@ To install required dependencies, run the following command(s):
 ${data.installCMD}
 \`\`\`  
 
-
+${renderFeatures(data.featureConfirm, data.features)}
 
 ## Usage
 
