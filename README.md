@@ -11,6 +11,8 @@ Allows the user to quickly create a README file for their project through a seri
 
 The code and all relevant files can be found at [https://github.com/bob-w-perez/README-Generator](https://github.com/bob-w-perez/README-Generator). 
 
+A video demonstration of the project can be downloaded in MP4 format here: [https://github.com/bob-w-perez/README-Generator/blob/main/demo-video.mp4](https://github.com/bob-w-perez/README-Generator/blob/main/demo-video.mp4)
+
 
 ## Table of Contents
 
