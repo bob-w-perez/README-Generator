@@ -40,19 +40,29 @@ function renderLicenseLink(license) {
 
 
 function renderLicenseSection(license) {
+  if (license == 'none') {
+    return `## License
+This software is not licensed for open source use.`;
+  } else {
+  
   return `## License
 
 This project is licensed under the ${renderLicenseLink(license)}.`
+  }
 }
 
 
 function generateMarkdown(data) {
   return `# ${data.projectName}
-${renderLicenseBadge(data.license)}
+${renderLicenseBadge(data.license)}  
+
+
 
 ## Description
 
-${data.description}
+${data.description}  
+
+
 
 ## Table of Contents
 
@@ -60,13 +70,15 @@ ${data.description}
 
 - [Usage](#usage)
 
-- [License](#license)
-
 - [Contributing](#contributing)
 
 - [Tests](#tests)
 
 - [Questions](#questions)
+
+- [License](#license)  
+
+
 
 ## Installation
 
@@ -74,17 +86,21 @@ To install required dependencies, run the following command(s):
 
 \`\`\`
 ${data.installCMD}
-\`\`\`
+\`\`\`  
+
+
 
 ## Usage
 
-${data.usage}
+${data.usage}  
 
-${renderLicenseSection(data.license)}
 
-## Contributions
 
-${data.contributing}
+## Contributing
+
+${data.contributing}  
+
+
 
 ## Tests
 
@@ -92,11 +108,17 @@ To run tests, run the following command(s):
 
 \`\`\`
 ${data.testCMD}
-\`\`\`
+\`\`\`  
+
+
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at [github/${data.userName}](https://github.com/${data.userName}).
+If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at [github/${data.userName}](https://github.com/${data.userName}).  
+
+
+${renderLicenseSection(data.license)}  
+
 
 `;
 }

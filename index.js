@@ -15,7 +15,14 @@ const questions = [
     {
         type: 'input',
         message: 'What is your email address?',
-        name: 'email'
+        name: 'email',
+        validate: (input) => {
+            if (!input.includes('@')) {
+                return 'Please enter a valid email address...';
+            } else {
+                return true;
+            }
+        }
     },
     {
         type: 'input',
@@ -54,25 +61,14 @@ const questions = [
         type: 'input',
         message: "What does the user need to know about contributing to the repo?",
         name: 'contributing'
-    },
-    
-    //     type: 'input',
-    //     message: 'What is your GitHub URL?',
-    //     name: 'github',
-    //     validate: (input) => {
-    //         if (!input.includes('github')) {
-    //             return "Gotta be your GitHub dude....";
-    //         } else {
-    //             return true;
-    //         }    
-    //     },
+    }
 
 ];
 
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>{
-        err ? console.error(err) : console.log('Success!');     
+        err ? console.error(err) : console.log('Generating README.md...');     
     });
 }
 
