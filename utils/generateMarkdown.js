@@ -70,6 +70,8 @@ ${data.description}
 
 - [Usage](#usage)
 
+- [Credits](#credits)
+
 - [Contributing](#contributing)
 
 - [Tests](#tests)
@@ -94,7 +96,9 @@ ${data.installCMD}
 
 ${data.usage}  
 
+## Credits
 
+${data.credits}
 
 ## Contributing
 

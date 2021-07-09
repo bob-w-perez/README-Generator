@@ -42,6 +42,11 @@ const questions = [
     },
     {
         type: 'input',
+        message: "Who deserves to be credited for this project's development?",
+        name: 'credits'
+    },
+    {
+        type: 'input',
         message: "What command should be run to install dependencies?",
         name: 'installCMD',
         default: 'npm ci' 
