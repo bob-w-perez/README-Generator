@@ -6,8 +6,10 @@
 
 ## Description
 
-Allows the user to quickly create a README.md file for their projectthrough a series of command line prompts that gather information about the project, rednder that information in markdown form and then save the created markdown to a new file titled README.md in the 'new-README' directory.  
+Allows the user to quickly create a README file for their project through a series of command line prompts that gather information about the project, rednder that information in markdown form and then save the created markdown to a new file titled README.md in the 'new-README' directory.  
 
+
+The code and all relevant files can be found at [https://github.com/bob-w-perez/README-Generator](https://github.com/bob-w-perez/README-Generator). 
 
 
 ## Table of Contents
@@ -41,31 +43,21 @@ npm ci
 ## Features  
 - includes an option to have a 'Features' section in the created README. If the user responds "yes" to the prompt asking if they would like to include one, a second prompt is displayed which opens the user's default text editor to allow them to add information about their project's features with more control over formatting than the other section prompts
 
-- saves the generated README.md file to a subdirectory (new-README) to avoid potential confusion with the project's own README.md file 
+- saves the generated README file to a subdirectory (new-README) to avoid potential confusion with the project's own README.md file 
 
 ## Usage
 
-To generate a new README the user should open their preferred CLI (command line interface), navigate to the project directory, and then run the following command: node index.js  This will initate a series of prompts in the CLI and the user responses to these prompts will generate the new README.md which will appear in the 'new-README' subdirectory  
+To generate a new README the user should open their preferred CLI (command line interface), navigate to the project directory, and then run the following command: node index.js  This will initiate a series of prompts in the CLI and the user responses to these prompts will generate the new README.md which will appear in the 'new-README' subdirectory  
 
+![Demo gif](./project-demo.gif)
 ## Credits
 
-This was a solo project for the GA-Tech Bootcamp
-
-## Contributing
-
-If you would like to contribute to this project you may fork a copy and submit a pull request, or you may contact me to be added as a contributor to the main project.  
-
-
-
-## Tests
-
-To run tests, run the following command(s):
-
-```
-npm test
-```  
-
-
+Solo project for GATech Coding Bootcamp
+by Rob Perez
+- [Portfolio Page]https://bob-w-perez.github.io/Portfolio-Page/)
+- bob.w.perez@gmail.com
+- 404.317.5336
+  
 
 ## Questions
 
