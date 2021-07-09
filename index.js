@@ -1,4 +1,11 @@
-// TODO: Include packages needed for this application
+
+// $$$ gitignore and package-lock.json $$$ //
+
+// LOOK INTO adding images, links to deployed page
+
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -7,6 +14,7 @@ const questions = [
         message: 'What is your GitHub username?',
         name: 'userName'
     },
+    // add validations here
     {
         type: 'input',
         message: 'What is your email address?',
@@ -32,7 +40,7 @@ const questions = [
         type: 'input',
         message: "What command should be run to install dependencies?",
         name: 'installCMD',
-        default: 'npm i' 
+        default: 'npm ci' 
     },
     {
         type: 'input',
@@ -97,11 +105,23 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>{
+        err ? console.error(err) : console.log('Success!');     
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+            console.log(answers);
+            writeToFile('test.md', generateMarkdown(answers));
+        });
+
     
+
 }
 
 // Function call to initialize app
